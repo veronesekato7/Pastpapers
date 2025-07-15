@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Faculties of {{ university.name }}</title></head>
+<body>
+<h1>Faculties in {{ university.name }}</h1>
+<ul>
+  {% for faculty in faculties %}
+    <li><a href="{% url 'department_list' faculty.id %}">{{ faculty.name }}</a></li>
+  {% empty %}
+    <li>No faculties found.</li>
+  {% endfor %}
+</ul>
+<a href="{% url 'university_list' %}">Back to Universities</a>
+</body>
+</html>

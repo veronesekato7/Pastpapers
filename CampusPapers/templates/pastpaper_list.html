@@ -1,0 +1,8 @@
+<h1>Past Papers</h1>
+<ul>
+  {% for paper in pastpapers %}
+    <li>{{ paper.title }} - <a href="{{ paper.pdf.url }}" target="_blank">View PDF</a></li>
+  {% empty %}
+    <li>No past papers found.</li>
+  {% endfor %}
+</ul>

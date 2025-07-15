@@ -1,0 +1,8 @@
+<h1>Academic Years</h1>
+<ul>
+  {% for ay in academic_years %}
+    <li><a href="{% url 'pastpaper_list' ay.id %}">{{ ay.year_range }}</a></li>
+  {% empty %}
+    <li>No academic years found.</li>
+  {% endfor %}
+</ul>

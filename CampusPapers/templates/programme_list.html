@@ -1,0 +1,8 @@
+<h1>Programmes</h1>
+<ul>
+  {% for prog in programmes %}
+    <li><a href="{% url 'year_list' prog.id %}">{{ prog.name }}</a></li>
+  {% empty %}
+    <li>No programmes found.</li>
+  {% endfor %}
+</ul>

@@ -1,0 +1,8 @@
+<h1>Departments</h1>
+<ul>
+  {% for dept in departments %}
+    <li><a href="{% url 'programme_list' dept.id %}">{{ dept.name }}</a></li>
+  {% empty %}
+    <li>No departments found.</li>
+  {% endfor %}
+</ul>

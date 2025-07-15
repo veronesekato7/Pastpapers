@@ -1,0 +1,8 @@
+<h1>Semesters</h1>
+<ul>
+  {% for sem in semesters %}
+    <li><a href="{% url 'academic_year_list' sem.id %}">{{ sem.name }}</a></li>
+  {% empty %}
+    <li>No semesters found.</li>
+  {% endfor %}
+</ul>

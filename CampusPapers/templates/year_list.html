@@ -1,0 +1,8 @@
+<h1>Years</h1>
+<ul>
+  {% for y in years %}
+    <li><a href="{% url 'semester_list' y.id %}">Year {{ y.year }}</a></li>
+  {% empty %}
+    <li>No years found.</li>
+  {% endfor %}
+</ul>
