@@ -1,4 +1,6 @@
 <h1>Years</h1>
+<a href="{% url 'home' %}" style="padding:8px 16px; background:#007BFF; color:white; text-decoration:none; border-radius:5px;">🏠 Home</a>
+
 <ul>
   {% for y in years %}
     <li><a href="{% url 'semester_list' y.id %}">Year {{ y.year }}</a></li>

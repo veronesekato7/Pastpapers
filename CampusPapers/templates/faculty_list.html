@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+<a href="{% url 'home' %}" style="padding:8px 16px; background:#007BFF; color:white; text-decoration:none; border-radius:5px;">🏠 Home</a>
+
 <head><title>Faculties of {{ university.name }}</title></head>
 <body>
 <h1>Faculties in {{ university.name }}</h1>
@@ -11,5 +13,10 @@
   {% endfor %}
 </ul>
 <a href="{% url 'university_list' %}">Back to Universities</a>
+<div class="nav-buttons">
+    <a href="{% url 'university_list' %}">⬅ Back</a>
+    <a href="{% url 'department_list' university.id %}">Next ➡</a>
+</div>
+
 </body>
 </html>

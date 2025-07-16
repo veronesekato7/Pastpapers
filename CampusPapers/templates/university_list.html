@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+<a href="{% url 'home' %}" style="padding:8px 16px; background:#007BFF; color:white; text-decoration:none; border-radius:5px;">🏠 Home</a>
+
 <head><title>Universities</title></head>
 <body>
 <h1>Universities</h1>
@@ -10,5 +12,10 @@
     <li>No universities found.</li>
   {% endfor %}
 </ul>
+<div class="nav-buttons">
+    <span></span>
+    <a href="{% url 'faculty_list' 1 %}">Next ➡</a>
+</div>
+
 </body>
 </html>

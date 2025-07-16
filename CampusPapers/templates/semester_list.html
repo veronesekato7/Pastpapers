@@ -1,4 +1,7 @@
+<a href="{% url 'home' %}" style="padding:8px 16px; background:#007BFF; color:white; text-decoration:none; border-radius:5px;">🏠 Home</a>
+
 <h1>Semesters</h1>
+
 <ul>
   {% for sem in semesters %}
     <li><a href="{% url 'academic_year_list' sem.id %}">{{ sem.name }}</a></li>
