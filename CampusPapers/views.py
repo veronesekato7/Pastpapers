@@ -1,6 +1,10 @@
 from django.shortcuts import render, get_object_or_404
 from .models import University, Faculty, Department, Programme, Year, Semester, AcademicYear, PastPaper
 
+
+def home(request):
+    return render(request, 'home.html')
+
 def university_list(request):
     universities = University.objects.all()
     return render(request, 'university_list.html', {'universities': universities})

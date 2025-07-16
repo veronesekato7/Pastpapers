@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Campus Past Papers Portal</title>
+    <link rel="stylesheet" href="{% static 'styles/home.css' %}">
+</head>
+<body onload="showWelcomeMessage()">
+
+    <h1>📚 Welcome to the Campus Past Papers Portal</h1>
+    <p>Select a category to explore:</p>
+
+    <div class="card-grid">
+        <a class="card" href="{% url 'university_list' %}" onclick="return confirmNav(this)">
+            <h2>🏛️ Universities</h2>
+            <p>Explore all registered universities</p>
+        </a>
+
+        <a class="card" href="{% url 'faculty_list' 1 %}" onclick="return confirmNav(this)">
+            <h2>🏫 Faculties</h2>
+            <p>View faculties under a university</p>
+        </a>
+
+        <a class="card" href="{% url 'department_list' 1 %}" onclick="return confirmNav(this)">
+            <h2>🏬 Departments</h2>
+            <p>Explore departments under a faculty</p>
+        </a>
+
+        <a class="card" href="{% url 'programme_list' 1 %}" onclick="return confirmNav(this)">
+            <h2>📘 Programmes</h2>
+            <p>Academic programmes under a department</p>
+        </a>
+
+        <a class="card" href="{% url 'year_list' 1 %}" onclick="return confirmNav(this)">
+            <h2>📆 Years</h2>
+            <p>Choose academic years per programme</p>
+        </a>
+
+        <a class="card" href="{% url 'semester_list' 1 %}" onclick="return confirmNav(this)">
+            <h2>🗓️ Semesters</h2>
+            <p>First and second semesters</p>
+        </a>
+
+        <a class="card" href="{% url 'academic_year_list' 1 %}" onclick="return confirmNav(this)">
+            <h2>📖 Academic Years</h2>
+            <p>Select academic sessions</p>
+        </a>
+
+        <a class="card" href="{% url 'pastpaper_list' 1 %}" onclick="return confirmNav(this)">
+            <h2>📝 Past Papers</h2>
+            <p>Download and view past papers</p>
+        </a>
+    </div>
+
+    <script>
+        // Show welcome message once when page loads
+        function showWelcomeMessage() {
+            alert("Welcome to the Campus Past Papers Portal!");
+        }
+
+        // Confirm before navigating
+        function confirmNav(link) {
+            return confirm("Do you want to open " + link.innerText.trim() + "?");
+        }
+    </script>
+
+</body>
+</html>
