@@ -1,22 +1,20 @@
-<!DOCTYPE html>
-<html>
-<a href="{% url 'home' %}" style="padding:8px 16px; background:#007BFF; color:white; text-decoration:none; border-radius:5px;">🏠 Home</a>
+{% extends 'base.html' %}
 
-<head><title>Faculties of {{ university.name }}</title></head>
-<body>
-<h1>Faculties in {{ university.name }}</h1>
-<ul>
-  {% for faculty in faculties %}
-    <li><a href="{% url 'department_list' faculty.id %}">{{ faculty.name }}</a></li>
-  {% empty %}
-    <li>No faculties found.</li>
-  {% endfor %}
-</ul>
-<a href="{% url 'university_list' %}">Back to Universities</a>
-<div class="nav-buttons">
-    <a href="{% url 'university_list' %}">⬅ Back</a>
-    <a href="{% url 'department_list' university.id %}">Next ➡</a>
+{% block title %}Faculties{% endblock %}
+
+{% block content %}
+<h2>Faculties in {{ university.name }}</h2>
+
+<div class="faculty-scroll-container">
+    {% for faculty in faculties %}
+        <div class="faculty-card">
+            <a href="{% url 'department_list' faculty.id %}">
+                <h3>{{ faculty.name }}</h3>
+                <p>{{ faculty.description|default:"No description provided." }}</p>
+            </a>
+        </div>
+    {% empty %}
+        <p>No faculties found.</p>
+    {% endfor %}
 </div>
-
-</body>
-</html>
+{% endblock %}

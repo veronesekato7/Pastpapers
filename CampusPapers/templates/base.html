@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Campus Papers{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/faculty_list.css' %}">
+</head>
+<body>
+
+    <header>
+        <h1>Campus Past Paper Portal</h1>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Campus Portal</p>
+    </footer>
+
+</body>
+</html>
